@@ -16,6 +16,7 @@ FolderMagic
 * 中英多语言支持
 * 支持常用文件管理，文件一拖即传
 * 支持主流浏览器，完整支持IE11，部分支持IE10和IE9
+* 响应式布局，适配移动浏览器，适配黑暗模式
 
 ## 命令行参数
 ```
@@ -36,6 +37,20 @@ FolderMagic
   -wd string
         用于webdav的认证路径, 不可使用根目录 (默认 "/manager")
 ```
+
+## 缩略图
+
+### 登录界面
+<img src="https://github.com/FolderMagic/FolderMagic/raw/master/login.png" />
+
+### 文件浏览
+<img src="https://github.com/FolderMagic/FolderMagic/raw/master/browse.png" />
+
+### 字幕支持
+<img src="https://github.com/FolderMagic/FolderMagic/raw/master/subtitle.png" />
+
+### 文件搜索
+<img src="https://github.com/FolderMagic/FolderMagic/raw/master/search.png" />
 
 ## webdav 使用
 
