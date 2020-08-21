@@ -149,12 +149,15 @@ server {
 
 		location / {
 			proxy_buffering off;
+			# 一定要加，否则FolderMagic在反代后不能识别客户ip，直接封锁全部用户
+			proxy_set_header X-Real-IP $remote_addr;
+			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 			proxy_pass http://127.0.0.1:81;
 		}
 }
 ```
 
-caddy
+caddy v1 (v2 内容待添加，目前请自行google解决，本人没使用过caddy :-D）
 ```
 https://example.com, https://www.example.com {
   gzip 
@@ -162,11 +165,15 @@ https://example.com, https://www.example.com {
       Strict-Transport-Security "max-age=31536000;includeSubdomains;preload"
   }
   ## HTTP 代理配置
-  ### 此时访问 example.com，实际访问的是 127.0.0.1:81/ 的内容
+  ### 此时访问 example.com，实际访问的是 127.0.0.1:81 的内容
   proxy / 127.0.0.1:81
+  header_upstream Host {host}
+  header_upstream X-Real-IP {remote}
+  header_upstream X-Forwarded-For {remote}
+  header_upstream X-Forwarded-Port {server_port}
+  header_upstream X-Forwarded-Proto {scheme}
   tls user@example.com
 }
-
 ```
 
 ## 已知问题
