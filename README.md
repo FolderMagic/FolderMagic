@@ -18,7 +18,15 @@ FolderMagic
 * 支持主流浏览器，完整支持IE11，部分支持IE10和IE9
 * 响应式布局，适配移动浏览器，适配黑暗模式
 
-## 命令行参数
+**这不是一个Onedrive/GoogleDrive/Dropbox/世纪互联/OSS 的列表程序，这是硬盘目录列表程序**
+
+## 使用方式
+
+本程序为linux amd64可执行文件，[点击这里](https://github.com/FolderMagic/FolderMagic/raw/master/FolderMagic) 下载后执行
+`chmod +x FolderMagic`
+然后就可以 `./FolderMagic` 运行了，默认共享当前所在文件夹，公开访问无认证。所有可选参数如下：
+
+### 命令行参数
 ```
   -aria string
         Aria2 RPC地址 (默认 "http://127.0.0.1:6800/jsonrpc")，列表程序将安全的转发这个地址
