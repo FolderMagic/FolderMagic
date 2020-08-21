@@ -41,16 +41,16 @@ FolderMagic
 ## 缩略图
 
 ### 登录界面
-<img src="https://github.com/FolderMagic/FolderMagic/raw/master/login.png" />
+<img src="https://raw.githubusercontent.com/FolderMagic/FolderMagic/master/thumbnails/login.png" />
 
 ### 文件浏览
-<img src="https://github.com/FolderMagic/FolderMagic/raw/master/browse.png" />
+<img src="https://raw.githubusercontent.com/FolderMagic/FolderMagic/master/thumbnails/browse.png" />
 
 ### 字幕支持
-<img src="https://github.com/FolderMagic/FolderMagic/raw/master/subtitle.png" />
+<img src="https://raw.githubusercontent.com/FolderMagic/FolderMagic/master/thumbnails/subtitle.png" />
 
 ### 文件搜索
-<img src="https://github.com/FolderMagic/FolderMagic/raw/master/search.png" />
+<img src="https://raw.githubusercontent.com/FolderMagic/FolderMagic/master/thumbnails/search.png" />
 
 ## webdav 使用
 
