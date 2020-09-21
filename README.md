@@ -22,7 +22,7 @@ FolderMagic
 
 ## 使用方式
 
-本程序为linux amd64可执行文件，[点击这里](https://github.com/FolderMagic/FolderMagic/raw/master/FolderMagic) 下载后执行
+本程序为linux amd64可执行文件，[点击这里](https://githubfast.com/FolderMagic/FolderMagic/raw/master/FolderMagic) 下载后执行
 `chmod +x FolderMagic`
 
 然后就可以 `./FolderMagic` 运行了，默认共享当前所在文件夹，公开访问无认证。所有可选参数如下：
@@ -37,6 +37,8 @@ FolderMagic
         监听端口 (默认 ":80")
   -gzip
         使用gzip压缩 (默认 true)
+  -nosearch
+        关闭内置搜索功能
   -page404 string
         自定义404页面
   -root string
@@ -50,16 +52,16 @@ FolderMagic
 ## 缩略图
 
 ### 登录界面
-<img src="https://raw.githubusercontent.com/FolderMagic/FolderMagic/master/thumbnails/login.png" />
+<img src="https://usercontent.githubfast.com/raw/FolderMagic/FolderMagic/master/thumbnails/login.png" />
 
 ### 文件浏览
-<img src="https://raw.githubusercontent.com/FolderMagic/FolderMagic/master/thumbnails/browse.png" />
+<img src="https://usercontent.githubfast.com/raw/FolderMagic/FolderMagic/master/thumbnails/browse.png" />
 
 ### 字幕支持
-<img src="https://raw.githubusercontent.com/FolderMagic/FolderMagic/master/thumbnails/subtitle.png" />
+<img src="https://usercontent.githubfast.com/raw/FolderMagic/FolderMagic/master/thumbnails/subtitle.png" />
 
 ### 文件搜索
-<img src="https://raw.githubusercontent.com/FolderMagic/FolderMagic/master/thumbnails/search.png" />
+<img src="https://usercontent.githubfast.com/raw/FolderMagic/FolderMagic/master/thumbnails/search.png" />
 
 ## webdav 使用
 
@@ -134,6 +136,10 @@ IE9 及以下浏览器由于浏览器限制无法上传。
 可以在右下角菜单处打开搜索，也可使用Ctrl+F或者F3立刻开始搜索。
 
 索引文件占用少量内存（约3M/10k文件）。监听文件夹基于inotify，如果存在海量文件夹（如十几万个）则将会占用较多内存，甚至可能用完inotify的所有监听额度，**请不要直接共享根目录。**
+
+可以用`-nosearch`指令关闭搜索功能。如果您尝试在例如网络映射文件夹等文件系统上使用FolderMagic，索引可能会变得很慢并占用额外的资源，这时您就可以关闭搜索。
+
+搜索功能关闭后，系统会恢复使用浏览器原生的页面内查找功能。
 
 ## 安全措施
 
