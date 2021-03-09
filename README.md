@@ -63,6 +63,12 @@ FolderMagic
 ### 文件搜索
 ![image](https://github.com/FolderMagic/FolderMagic/blob/master/thumbnails/search.png)
 
+### 移动端优化
+![image](https://github.com/FolderMagic/FolderMagic/blob/master/thumbnails/mobile1.png)
+
+### 共享管理
+![image](https://github.com/FolderMagic/FolderMagic/blob/master/thumbnails/shareman.png)
+
 ## webdav 使用
 
 使用命令行 `-auth user:password` 启用鉴权后webdav即自动启用。
@@ -140,6 +146,10 @@ IE9 及以下浏览器由于浏览器限制无法上传。
 可以用`-nosearch`指令关闭搜索功能。如果您尝试在例如网络映射文件夹等文件系统上使用FolderMagic，索引可能会变得很慢并占用额外的资源，这时您就可以关闭搜索。
 
 搜索功能关闭后，系统会恢复使用浏览器原生的页面内查找功能。
+
+## 移动端适配
+
+FolderMagic 针对移动端、触摸屏设计了适合对应设备操作的界面。只要在文件列表轻轻右划即可进入适合iOS和Android的操作界面，方便的进行上传下载和文件管理。
 
 ## 安全措施
 
