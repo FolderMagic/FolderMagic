@@ -22,7 +22,7 @@ FolderMagic
 
 ## 使用方式
 
-本程序为linux amd64可执行文件，[点击这里](https://githubfast.com/FolderMagic/FolderMagic/raw/master/FolderMagic) 下载后执行
+本程序为linux amd64可执行文件，[点击这里](https://github.com/FolderMagic/FolderMagic/raw/master/FolderMagic) 下载后执行
 `chmod +x FolderMagic`
 
 然后就可以 `./FolderMagic` 运行了，默认共享当前所在文件夹，公开访问无认证。所有可选参数如下：
@@ -52,22 +52,22 @@ FolderMagic
 ## 缩略图
 
 ### 登录界面
-![image](https://githubfast.com/FolderMagic/FolderMagic/blob/master/thumbnails/login.png)
+![image](https://github.com/FolderMagic/FolderMagic/blob/master/thumbnails/login.png)
 
 ### 文件浏览
-![image](https://githubfast.com/FolderMagic/FolderMagic/blob/master/thumbnails/browse.png)
+![image](https://github.com/FolderMagic/FolderMagic/blob/master/thumbnails/browse.png)
 
 ### 字幕支持
-![image](https://githubfast.com/FolderMagic/FolderMagic/blob/master/thumbnails/subtitle.png)
+![image](https://github.com/FolderMagic/FolderMagic/blob/master/thumbnails/subtitle.png)
 
 ### 文件搜索
-![image](https://githubfast.com/FolderMagic/FolderMagic/blob/master/thumbnails/search.png)
+![image](https://github.com/FolderMagic/FolderMagic/blob/master/thumbnails/search.png)
 
 ### 移动端优化
-![image](https://githubfast.com/FolderMagic/FolderMagic/blob/master/thumbnails/mobile1.png)
+![image](https://github.com/FolderMagic/FolderMagic/blob/master/thumbnails/mobile1.png)
 
 ### 共享管理
-![image](https://githubfast.com/FolderMagic/FolderMagic/blob/master/thumbnails/shareman.png)
+![image](https://github.com/FolderMagic/FolderMagic/blob/master/thumbnails/shareman.png)
 
 ## webdav 使用
 
