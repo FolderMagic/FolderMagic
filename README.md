@@ -6,7 +6,7 @@ FolderMagic
 * 无需环境，无需数据库，低内存占用
 * 支持webdav管理
 * 支持视频在线播放，支持字幕（srt, ass, ssa, vtt等）
-* 支持图片预览，支持常见jpg, gif, png, tif, psd格式预览
+* 支持图片预览，支持常见jpg, gif, png, tif, psd格式预览，图片画廊带来流畅体验
 * 支持音频在线播放，支持解析专辑图片和歌手信息
 * 支持文档在线预览，包括常见各类代码格式，如html, js, css, php, py, pdf等
 * 支持office在线预览
@@ -56,6 +56,9 @@ FolderMagic
 
 ### 文件浏览
 ![image](https://github.com/FolderMagic/FolderMagic/blob/master/thumbnails/browse.png)
+
+### 画廊
+![image](https://github.com/FolderMagic/FolderMagic/blob/master/thumbnails/gallery.png)
 
 ### 字幕支持
 ![image](https://github.com/FolderMagic/FolderMagic/blob/master/thumbnails/subtitle.png)
@@ -220,3 +223,4 @@ https://example.com, https://www.example.com {
 * IE10及以下符号显示不正常，IE9及以下不能上传文件，切换文件夹将丢失当前正在预览的图像或音视频
 * **360浏览器** 由于奇葩的设计，极速模式下所有文件拖放上传功能都不可用，只能在兼容模式下的IE内核才能上传
 * 和部分拖放打开的插件有冲突，会出现有时能拖放有时不能，或者拖放时页面闪烁等情况，只能对本列表页面禁用插件解决。
+* iOS Chrome存在一些特有问题，播放动画等会出现不流畅的情况，其他浏览器无问题，应为Chrome的自有代码缺陷。
