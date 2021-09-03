@@ -6,7 +6,7 @@ FolderMagic 1.3
 * 无需环境，无需数据库，低内存占用
 * 支持webdav管理
 * 支持完善的文件管理，可新建删除重命名和移动任意文件或文件夹，支持批量操作（移动端）
-* 支持视频在线播放，支持字幕（srt, ass, ssa, vtt等）
+* 支持视频在线播放，支持字幕（srt, ass, ssa, vtt等），支持倍速播放
 * 支持图片预览，支持常见jpg, gif, png, tif, psd格式预览，图片画廊带来流畅体验
 * 支持音频在线播放，支持解析专辑图片和歌手信息，目前支持mp3,wav和ogg格式
 * 支持文档在线预览，包括常见各类代码格式，如html, js, css, php, py, pdf等
@@ -30,27 +30,31 @@ FolderMagic 1.3
 
 ### 命令行参数
 ```
-  -aria string
-        Aria2 RPC地址 (默认 "http://127.0.0.1:6800/jsonrpc")，列表程序将安全的转发这个地址
-  -auth string
-        认证: "用户名:密码" 认证信息用于网页登录和webdav，不设置则无认证，webdav将被禁用
-  -bind string
-        监听端口 (默认 ":80")，以 ip:端口 的格式输入，ip可省略，直接输入 :端口 即可监听所有接口
-  -gzip
-        使用gzip压缩 (默认 true)
-  -nosearch
-        关闭内置搜索功能
-  -page404 string
-        自定义404页面
-  -root string
-        列表根目录 (默认为当前目录)
-  -share int
-        默认共享链接有效期，单位分钟 (默认 60)
-  -nothumb
-		关闭内置缩略图生成功能，使用简易画廊，见下文描述 (默认 false)
-  -wd string
-        用于webdav的认证路径, 不可使用根目录 (默认 "/manager")
+  -b, --bind=     监听端口，格式为 IP:PORT 或 :PORT，请注意冒号不能省略 (default: :80)
+  
+  -r, --root=     列表根目录，默认为当前目录
+  
+      --gzip=     启用gzip压缩 (default: true)
+	  
+  -a, --auth=     认证信息，格式： "用户名:密码" 认证信息用于网页登录和webdav，不设置则无认证，webdav将被禁用
+  
+  -w, --webdav=   webdav认证路径，需在webdav客户端中输入 (default: /manager)
+  
+      --page404=  自定义404页面
+	  
+      --nosearch  关闭内置搜索功能
+	  
+      --nothumb   关闭内置缩略图生成功能，使用简易画廊，见下文描述 (默认 false)
+	  
+  -s, --share=    默认共享链接有效期，单位分钟 (default: 60)
+  
+      --aria=     Aria2 RPC地址 (默认 "http://127.0.0.1:6800/jsonrpc")，列表程序将安全的转发这个地址
+	  
+  -d, --daemon    以后台服务方式运行，无需nohup或screen。不支持Windows。
+  
+      --pid=      后台运行时的pid文件，不支持Windows (default: /var/run/fm.pid)
 ```
+说明：使用Windows时，参数需使用空格隔开，如 -r c:\temp，使用Linux时，参数可使用空格或=隔开。-d，--nothumb等指令不需要参数可直接使用。
 
 ## 缩略图
 
@@ -83,13 +87,13 @@ FolderMagic 1.3
 
 ## webdav 使用
 
-使用命令行 `-auth user:password` 启用鉴权后webdav即自动启用。
+使用命令行 `--auth user:password` 启用鉴权后webdav即自动启用。
 
 使用raidrive或其他webdav兼容客户端连接 http://your.domain:port/manager 输入用户名和密码即可连接。
 
 由于webdav本身协议的限制，webdav下不能对文件名为乱码的文件和文件夹进行操作，请在网页端进行重命名。
 
-/manager 可使用 `-wd` 指令更改
+/manager 可使用 `-w`或`--webdav` 指令更改
 
 ## 文件管理
 
@@ -140,7 +144,7 @@ IE9 及以下浏览器由于浏览器限制无法上传。
 
 ## 共享管理
 
-通过右键复制的临时链接自动拥有一定时间的有效期（默认60分钟，可通过`-share`指令更改），到期后无法被下载。
+通过右键复制的临时链接自动拥有一定时间的有效期（默认60分钟，可通过`--share`指令更改），到期后无法被下载。
 
 在右下角菜单中选择共享管理即可添加或减少共享时间，也可删除共享
 
@@ -150,7 +154,7 @@ IE9 及以下浏览器由于浏览器限制无法上传。
 
 ## AriaNG
 
-通过右下角菜单可以调用内置的ariaNg，并默认指向/jsonrpc路径。FolderMagic将默认转发/jsonrpc到`http://127.0.0.1:6800/jsonrpc` （aria2 rpc默认路径），可通过`-aria` 指令更改转发地址
+通过右下角菜单可以调用内置的ariaNg，并默认指向/jsonrpc路径。FolderMagic将默认转发/jsonrpc到`http://127.0.0.1:6800/jsonrpc` （aria2 rpc默认路径），可通过`--aria` 指令更改转发地址
 
 /jsonrpc 需要被认证后才能访问（如果启用了认证的话），所以该转发是安全的，即便没有密码，其他人也无法连接到你的aria2rpc
 
@@ -162,7 +166,7 @@ IE9 及以下浏览器由于浏览器限制无法上传。
 
 索引文件占用少量内存（约3M/10k文件）。监听文件夹基于inotify，如果存在海量文件夹（如十几万个）则将会占用较多内存，甚至可能用完inotify的所有监听额度，**请不要直接共享根目录。**
 
-可以用`-nosearch`指令关闭搜索功能。如果您尝试在例如网络映射文件夹等文件系统上使用FolderMagic，索引可能会变得很慢并占用额外的资源，这时您就可以关闭搜索。
+可以用`--nosearch`指令关闭搜索功能。如果您尝试在例如网络映射文件夹等文件系统上使用FolderMagic，索引可能会变得很慢并占用额外的资源，这时您就可以关闭搜索。
 
 搜索功能关闭后，系统会恢复使用浏览器原生的页面内查找功能。
 
