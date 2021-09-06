@@ -184,6 +184,23 @@ FolderMagic 针对移动端、触摸屏设计了适合对应设备操作的界�
 
 *由于chroot的使用，符号链接文件和符号链接文件夹可能无法使用，因为他们将指向一个完全不同的路径*
 
+## Systemd 启动脚本（感谢qanniu和bbsbbs）
+```
+[Unit]
+Description=FolderMagic
+After=network.target
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5s
+ExecStart=/指向你的foldermagic的位置 -b :80 -r /home/naf/ -a "user:passwd"
+ExecReload=/指向你的foldermagic的位置 reload -b :80 -r /home/naf/ -a "user:passwd"
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ## https
 
 FolderMagic 没有https的原生支持，你可以通过nginx或者caddy做前端来添加https的支持。
@@ -210,6 +227,8 @@ server {
 
 		location / {
 			proxy_buffering off;
+			proxy_cache off;
+            proxy_set_header X-Forwarded-Proto $scheme;
 			# 一定要加，否则FolderMagic在反代后不能识别客户ip，直接封锁全部用户
 			proxy_set_header X-Real-IP $remote_addr;
 			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
