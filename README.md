@@ -194,8 +194,8 @@ After=network.target
 Type=simple
 Restart=on-failure
 RestartSec=5s
-ExecStart=/指向你的foldermagic的位置 -b :80 -r /home/naf/ -a "user:passwd"
-ExecReload=/指向你的foldermagic的位置 reload -b :80 -r /home/naf/ -a "user:passwd"
+ExecStart=/指向你的foldermagic的位置 -b :80 -r 共享路径 -a "user:passwd"
+ExecReload=/指向你的foldermagic的位置 reload -b :80 -r 共享路径 -a "user:passwd"
 
 [Install]
 WantedBy=multi-user.target
@@ -228,7 +228,7 @@ server {
 		location / {
 			proxy_buffering off;
 			proxy_cache off;
-            proxy_set_header X-Forwarded-Proto $scheme;
+			proxy_set_header X-Forwarded-Proto $scheme;
 			# 一定要加，否则FolderMagic在反代后不能识别客户ip，直接封锁全部用户
 			proxy_set_header X-Real-IP $remote_addr;
 			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
